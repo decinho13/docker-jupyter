@@ -7,7 +7,7 @@ USER root
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 RUN apt-get update && apt-get install -y \
-python-rosdep python-rosinstall \
+python-rosdep python-rosinstall gnupg2 curl ca-certificates\
 && apt-get clean
 
 # Install ROS
