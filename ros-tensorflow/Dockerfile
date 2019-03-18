@@ -75,10 +75,10 @@ USER jovyan
 # Install Tensorflow
 RUN conda install --quiet --yes \
     'tensorflow=1.12*' \
-    'keras=2.2*' && \
-    'theano' && \
-    'pytorch' && \
-    'pyspark' && \
+    'keras=2.2*' \
+    'theano' \
+    'pytorch' \
+    'pyspark' \
     'nltk' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR && \
