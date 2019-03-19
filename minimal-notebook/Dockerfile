@@ -1,9 +1,9 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=decinho13/jupyter-base-notebook
+ARG BASE_CONTAINER=decinho13/base-notebook:latest
 FROM $BASE_CONTAINER
 
-LABEL maintainer=Dennis Lubczyk
+LABEL maintainer=Dennis_Lubczyk
 
 USER root
 

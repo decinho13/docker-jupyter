@@ -1,9 +1,9 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=decinho13/jupyter-minimal-notebook
+ARG BASE_CONTAINER=decinho13/base-notebook:minimal
 FROM $BASE_CONTAINER
 
-LABEL maintainer=Dennis Lubczyk
+LABEL maintainer=Dennis_Lubczyk
 
 USER root
 
@@ -55,9 +55,7 @@ RUN conda install --quiet --yes \
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     rm -rf /home/$NB_USER/.cache/yarn && \
-    rm -rf /home/$NB_USER/.node-gyp && \
-    fix-permissions $CONDA_DIR && \
-    fix-permissions /home/$NB_USER
+    rm -rf /home/$NB_USER/.node-gyp 
 
 # Install facets which does not have a pip or conda package at the moment
 RUN cd /tmp && \
@@ -65,13 +63,10 @@ RUN cd /tmp && \
     cd facets && \
     jupyter nbextension install facets-dist/ --sys-prefix && \
     cd && \
-    rm -rf /tmp/facets && \
-    fix-permissions $CONDA_DIR && \
-    fix-permissions /home/$NB_USER
+    rm -rf /tmp/facets 
 
 # Import matplotlib the first time to build the font cache.
 ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
-RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
-    fix-permissions /home/$NB_USER
+RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot"
 
 USER $NB_UID
