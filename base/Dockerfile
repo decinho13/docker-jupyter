@@ -132,3 +132,4 @@ COPY jupyter_notebook_config.py /etc/jupyter/
 
 # Switch back to jovyan to avoid accidental container runs as root
 
+USER $NB_UID
