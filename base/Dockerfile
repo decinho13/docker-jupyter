@@ -130,7 +130,7 @@ COPY jupyter_notebook_config.py /etc/jupyter/
 # Configure container startup
 USER $NB_UID
 ENTRYPOINT ["tini", "-g", "--"]
-CMD ["sh","start-notebook.sh"]
+CMD ["bash","start-notebook.sh"]
 # Switch back to jovyan to avoid accidental container runs as root
 
 
