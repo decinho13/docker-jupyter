@@ -30,7 +30,7 @@ ENV NVIDIA_REQUIRE_CUDA "cuda>=10.0 brand=tesla,driver>=384,driver<385"
 ENV NCCL_VERSION 2.4.2
 
 
-USER jovyan
+
 # Install Tensorflow
 RUN conda install --quiet --yes \
     'tensorflow=1.12*' \
