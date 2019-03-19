@@ -121,7 +121,7 @@ WORKDIR $HOME
 
 # Configure container startup
 ENTRYPOINT ["tini", "-g", "--"]
-CMD ["sh","start-notebook.sh"]
+CMD ["sudo","sh","start-notebook.sh"]
 
 # Add local files as late as possible to avoid cache busting
 COPY start.sh /usr/local/bin/
