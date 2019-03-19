@@ -39,7 +39,5 @@ RUN conda install --quiet --yes \
     'pytorch' \
     'pyspark' \
     'nltk' && \
-    conda clean -tipsy && \
-    fix-permissions $CONDA_DIR && \
-    fix-permissions /home/$NB_USER
+    conda clean -tipsy 
 RUN pip install elephas
