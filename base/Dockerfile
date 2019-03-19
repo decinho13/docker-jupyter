@@ -128,8 +128,9 @@ COPY start-singleuser.sh /usr/local/bin/
 COPY jupyter_notebook_config.py /etc/jupyter/
 #RUN fix-permissions /etc/jupyter/
 # Configure container startup
+USER $NB_UID
 ENTRYPOINT ["tini", "-g", "--"]
 CMD ["sh","start-notebook.sh"]
 # Switch back to jovyan to avoid accidental container runs as root
 
-USER $NB_UID
+
