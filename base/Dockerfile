@@ -129,7 +129,7 @@ COPY jupyter_notebook_config.py /etc/jupyter/
 #RUN fix-permissions /etc/jupyter/
 # Configure container startup
 ENTRYPOINT ["tini", "-g", "--"]
-CMD ["start-notebook.sh"]
+CMD ["sh","start-notebook.sh"]
 # Switch back to jovyan to avoid accidental container runs as root
 
 USER $NB_UID
