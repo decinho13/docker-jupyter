@@ -3,7 +3,7 @@
 
 # Ubuntu 18.04 (bionic) from 2018-05-26
 # https://github.com/docker-library/official-images/commit/aac6a45b9eb2bffb8102353c350d341a410fb169
-ARG BASE_CONTAINER=nvidia/cuda:9.0-devel-ubuntu16.04
+ARG BASE_CONTAINER=nvidia/cuda:10.0-devel-ubuntu16.04
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
