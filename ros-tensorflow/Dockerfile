@@ -35,6 +35,7 @@ ENV NCCL_VERSION 2.4.2
 RUN conda install --quiet --yes \
     'tensorflow=1.12*' \
     'keras=2.2*' \
+    'tensorflow-gpu' \
     'theano' \
     'pytorch' \
     'pyspark' \
