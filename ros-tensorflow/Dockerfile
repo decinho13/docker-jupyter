@@ -28,7 +28,15 @@ ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 ENV NVIDIA_REQUIRE_CUDA "cuda>=10.0 brand=tesla,driver>=384,driver<385"
 
 ENV NCCL_VERSION 2.4.2
-
+RUN sudo apt-get install -y --no-install-recommends \
+    cuda-10-0 \
+    libcudnn7=7.4.1.5-1+cuda10.0  \
+    libcudnn7-dev=7.4.1.5-1+cuda10.0
+    
+RUN sudo apt-get update && \
+        sudo apt-get install -y nvinfer-runtime-trt-repo-ubuntu1604-5.0.2-ga-cuda10.0 \
+        && sudo apt-get update \
+        && sudo apt-get install -y --no-install-recommends libnvinfer-dev=5.0.2-1+cuda10.0
 
 
 # Install Tensorflow
@@ -41,4 +49,4 @@ RUN conda install --quiet --yes \
     'pyspark' \
     'nltk' && \
     conda clean -tipsy 
-RUN pip install elephas
+RUN pip install elephas gym keras-rl
