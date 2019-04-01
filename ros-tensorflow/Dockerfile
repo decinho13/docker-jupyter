@@ -36,6 +36,7 @@ RUN wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubu
 RUN sudo apt install -y ./nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
 RUN sudo apt-get update
 
+    
 
 
 # Install Tensorflow
@@ -49,3 +50,8 @@ RUN conda install --quiet --yes \
     'nltk' && \
     conda clean -tipsy 
 RUN pip install elephas gym keras-rl
+RUN sudo apt-get update && \
+        sudo apt-get install -y nvinfer-runtime-trt-repo-ubuntu1604-5.0.2-ga-cuda10.0 \
+        && sudo apt-get update \
+        && sudo apt-get install -y --no-install-recommends libnvinfer-dev=5.0.2-1+cuda10.0
+
