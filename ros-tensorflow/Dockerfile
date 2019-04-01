@@ -53,5 +53,5 @@ RUN pip install elephas gym keras-rl
 RUN sudo apt-get update && \
         sudo apt-get install -y nvinfer-runtime-trt-repo-ubuntu1604-5.0.2-ga-cuda10.0 \
         && sudo apt-get update \
-        && sudo apt-get install -y --no-install-recommends libnvinfer-dev=5.1.2-1+cuda10.0
+        && sudo apt-get install -y --no-install-recommends libnvinfer-dev=5.1.2-1+cuda10.1
 
