@@ -52,5 +52,5 @@ RUN conda install --quiet --yes \
     'pyspark' \
     'nltk' && \
     conda clean -tipsy 
-RUN pip install elephas gym keras-rl
+RUN pip install elephas gym keras-rl opencv-python
 
