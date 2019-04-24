@@ -5,5 +5,5 @@ RUN chgrp -R 0 /home/jovyan && \
 RUN chmod g=u /etc/passwd
 USER 10001
 WORKDIR /home/jovyan
-ENTRYPOINT [ "uid_entrypoint" ]
+ENTRYPOINT [ "/home/jovyan/uid_entrypoint" ]
 
