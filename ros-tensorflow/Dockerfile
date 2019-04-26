@@ -46,12 +46,11 @@ RUN sudo apt-get update && \
 RUN conda install --quiet --yes \
     'tensorflow=1.12*' \
     'keras=2.2*' \
-    'tensorflow-gpu' \
     'theano' \
-    'pytorch' \
     'pyspark' \
     'nltk' && \
     conda clean -tipsy 
 RUN pip install elephas gym keras-rl opencv-python
+RUN pip install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp35-cp35m-linux_x86_64.whl && pip install torchvision
 USER jovyan
 
