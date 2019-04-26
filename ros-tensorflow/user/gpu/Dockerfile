@@ -1,4 +1,4 @@
-FROM decinho13/base-notebook:ros-tf
+FROM decinho13/base-notebook:ML
 
 # nvidia-container-runtime
 ENV NVIDIA_VISIBLE_DEVICES all
