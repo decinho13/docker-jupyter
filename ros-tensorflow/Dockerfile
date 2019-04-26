@@ -50,7 +50,7 @@ RUN conda install --quiet --yes \
     'pyspark' \
     'nltk' && \
     conda clean -tipsy 
-RUN pip install elephas gym keras-rl opencv-python
+RUN pip install elephas gym keras-rl opencv-python roslibpy
 RUN pip install https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp35-cp35m-linux_x86_64.whl && pip install torchvision
 USER jovyan
 
