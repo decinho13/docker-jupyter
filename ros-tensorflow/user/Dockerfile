@@ -28,12 +28,13 @@ RUN pip install jupyros && jupyter nbextension enable --py --sys-prefix jupyros 
 #Install openai_ros
 RUN pip2 install catkin_tools rospkg numpy
 RUN pip install catkin_tools rospkg 
+RUN sudo apt-get install -y python-rospkg ros-kinetic-teb-local-planner ros-kinetic-ackermann-msgs ros-kinetic-effort-controllers ros-kinetic-joy ros-kinetic-tf2-sensor-msgs 
+
 RUN mkdir ros_ws && cd ros_ws && mkdir src && cd src && \
     git clone https://bitbucket.org/theconstructcore/openai_ros.git &&\
     git clone https://github.com/mit-racecar/racecar.git &&\
     git clone https://github.com/mit-racecar/racecar-simulator.git 
 RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd  ~/ros_ws; catkin_make; source devel/setup.bash; rosdep install openai_ros'
-RUN sudo apt-get install -y python-rospkg ros-kinetic-teb-local-planner ros-melodic-ackermann-msgs ros-kinetic-effort-controllers ros-kinetic-joy ros-kinetic-tf2-sensor-msgs 
 
 RUN git clone https:/github.com/RoboStack/jupyter-ros.git
 RUN pip2 install tensorflow keras
