@@ -12,7 +12,6 @@ RUN sudo apt-get install -y ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-c
 
 
 # Configure ROS
-RUN sudo rosdep init && sudo rosdep fix-permissions && rosdep update
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
 
 #Add Python 2.7 with kernel for jupyter notebook
