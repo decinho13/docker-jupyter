@@ -38,6 +38,7 @@ RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd  ~/ros_ws; catkin_make; sour
 
 RUN git clone https://github.com/RoboStack/jupyter-ros.git
 RUN pip2 install setuptools enum34 tensorflow keras
+RUN git clone https://github.com/erlerobot/gym-gazebo.git && cd gym-gazebo && sudo pip install -e .
 #Add user permissions to jovyan for using ROS as non-root
 RUN chown -R 1000:0 /opt/ros  && chmod -R g=u  /opt/ros 
 RUN chown -R 1000:0  /etc  && chmod -R g=u /etc 
