@@ -26,7 +26,7 @@ RUN pip install bqplot pyyaml empy
 RUN pip install jupyros && jupyter nbextension enable --py --sys-prefix jupyros && jupyter labextension install jupyter-ros
 
 #Install openai_ros
-RUN pip2 install catkin_tools rospkg numpy tensorflow keras
+RUN pip2 install catkin_tools rospkg numpy tensorflow==1.11.0 keras
 RUN pip install catkin_tools rospkg 
 RUN mkdir ros_ws && cd ros_ws && mkdir src && cd src && \
     git clone https://bitbucket.org/theconstructcore/openai_ros.git &&\
