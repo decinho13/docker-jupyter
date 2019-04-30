@@ -40,7 +40,7 @@ RUN git clone https://github.com/RoboStack/jupyter-ros.git
 RUN pip2 install setuptools enum34 tensorflow keras
 RUN git clone https://github.com/erlerobot/gym-gazebo.git && cd gym-gazebo && sudo pip install -e .
 RUN git clone https://github.com/RobInLabUJI/ROS-Tutorials.git
-RUN sudo apt-get install python-rosinstall ros-kinetic-ros-tutorials ros-kinetic-common-tutorials
+RUN sudo apt-get install -y python-rosinstall ros-kinetic-ros-tutorials ros-kinetic-common-tutorials
 #Add user permissions to jovyan for using ROS as non-root
 RUN chown -R 1000:0 /opt/ros  && chmod -R g=u  /opt/ros 
 RUN chown -R 1000:0  /etc  && chmod -R g=u /etc 
