@@ -36,7 +36,7 @@ RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd  ~/ros_ws; catkin_make; sour
 RUN sudo apt-get install -y python-rospkg ros-kinetic-teb-local-planner ros-melodic-ackermann-msgs ros-kinetic-effort-controllers ros-kinetic-joy ros-kinetic-tf2-sensor-msgs 
 
 RUN git clone https:/github.com/RoboStack/jupyter-ros.git
-
+RUN pip2 install tensorflow keras
 #Add user permissions to jovyan for using ROS as non-root
 RUN chown -R 1000:0 /opt/ros  && chmod -R g=u  /opt/ros 
 RUN chown -R 1000:0  /etc  && chmod -R g=u /etc 
