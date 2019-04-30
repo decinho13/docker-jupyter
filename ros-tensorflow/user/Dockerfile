@@ -26,11 +26,12 @@ RUN pip install bqplot pyyaml empy
 RUN pip install jupyros && jupyter nbextension enable --py --sys-prefix jupyros && jupyter labextension install jupyter-ros
 
 #Install openai_ros
-RUN pip2 install catkin_tools
-RUN pip install catkin_tools
+RUN pip2 install catkin_tools rospkg 
+RUN pip install catkin_tools rospkg 
 RUN mkdir ros_ws && cd ros_ws && mkdir src && cd src && \
     git clone https://bitbucket.org/theconstructcore/openai_ros.git
 RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd  ~/ros_ws; catkin_make; source devel/setup.bash; rosdep install openai_ros'
+RUN sudo apt-get install -y python-rospkg
 
 #Add user permissions to jovyan for using ROS as non-root
 RUN chown -R 1000:0 /opt/ros  && chmod -R g=u  /opt/ros 
