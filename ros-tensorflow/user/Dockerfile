@@ -16,7 +16,7 @@ RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
 
 #Add Python 2.7 with kernel for jupyter notebook
 RUN sudo apt-get update && sudo apt-get install -y python2.7 python3-pip python-pip
-RUN python2 -m pip install --upgrade pip && python2 -m pip install ipykernel==4.10.0 && python2 -m ipykernel install --user
+RUN python2 -m pip install --upgrade pip && python2 -m pip install ipykernel && python2 -m ipykernel install --user
 
 #Add tools for jupyros
 RUN pip2 install bqplot pyyaml empy
