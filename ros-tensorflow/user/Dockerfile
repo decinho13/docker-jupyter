@@ -36,4 +36,4 @@ RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd  ~/ros_ws; catkin_make; sour
 RUN chown -R 1000:0 /opt/ros  && chmod -R g=u  /opt/ros 
 RUN chown -R 1000:0  /etc  && chmod -R g=u /etc 
 RUN chown -R 1000:0  /home  && chmod -R g=u /home 
-
+USEr jovyan
