@@ -36,7 +36,7 @@ RUN mkdir ros_ws && cd ros_ws && mkdir src && cd src && \
     git clone https://github.com/mit-racecar/racecar-simulator.git 
 RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd  ~/ros_ws; catkin_make; source devel/setup.bash; rosdep install openai_ros'
 
-RUN git clone https:/github.com/RoboStack/jupyter-ros.git
+RUN git clone https://github.com/RoboStack/jupyter-ros.git
 RUN pip2 install tensorflow keras
 #Add user permissions to jovyan for using ROS as non-root
 RUN chown -R 1000:0 /opt/ros  && chmod -R g=u  /opt/ros 
